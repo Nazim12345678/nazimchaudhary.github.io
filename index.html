@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Muhammad Nazim - Data & Analytics / Governance Architect. Enterprise data solutions using Microsoft Fabric, Azure, AWS, and Snowflake.">
+    <title>Muhammad Nazim | Data & Analytics Architect</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header>
+        <nav>
+            <div class="logo">Muhammad Nazim</div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Projects</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Muhammad Nazim</h1>
+        <p class="subtitle">Data & Analytics / Governance Architect</p>
+        <div class="tech-stack">
+            <span>Microsoft Fabric</span>
+            <span>Azure</span>
+            <span>AWS</span>
+            <span>Snowflake</span>
+            <span>Power BI</span>
+        </div>
+        <div class="stats">
+            <div class="stat-item">
+                <span class="stat-number">20+</span>
+                <span class="stat-label">Enterprise Projects</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">8+</span>
+                <span class="stat-label">Years Experience</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">Fortune 500</span>
+                <span class="stat-label">Clients</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Projects -->
+    <section class="container">
+        <div class="section-header">
+            <h2>Featured Projects</h2>
+            <p>Enterprise-scale data architecture and analytics solutions</p>
+        </div>
+        
+        <div class="featured-projects">
+            <!-- Signal Project -->
+            <div class="featured-card">
+                <div class="featured-card-image">SIGNAL</div>
+                <div class="featured-card-content">
+                    <h3>Enterprise Data Product Platform</h3>
+                    <p class="client-name">TeamSignal | Security Services</p>
+                    <p>Built comprehensive data product (SOAP) with 12 KPIs across Sales, Operations, Admin, and Promise sections. Migrated to Microsoft Fabric in 2024.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">MS Fabric</span>
+                        <span class="tech-tag">Azure</span>
+                        <span class="tech-tag">Databricks</span>
+                        <span class="tech-tag">Power BI</span>
+                    </div>
+                    <div class="impact">Medallion Architecture | Role-Based Analytics</div>
+                    <a href="projects/signal.html" class="view-details">View Case Study</a>
+                </div>
+            </div>
+
+            <!-- Coca-Cola Project -->
+            <div class="featured-card">
+                <div class="featured-card-image">COCA-COLA</div>
+                <div class="featured-card-content">
+                    <h3>Real-Time IoT Data Platform</h3>
+                    <p class="client-name">The Coca-Cola Company | Global</p>
+                    <p>Implemented Eventhouse (KQL Database) processing 5.28M files daily from 55,000 global dispensers. Real-time and batch processing with intelligent query routing.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Fabric Eventhouse</span>
+                        <span class="tech-tag">KQL</span>
+                        <span class="tech-tag">Azure</span>
+                        <span class="tech-tag">Event Streams</span>
+                    </div>
+                    <div class="impact">220K files/hour | Sub-second queries</div>
+                    <a href="projects/coca-cola.html" class="view-details">View Case Study</a>
+                </div>
+            </div>
+
+            <!-- Starlinks Project -->
+            <div class="featured-card">
+                <div class="featured-card-image">STARLINKS</div>
+                <div class="featured-card-content">
+                    <h3>Supply Chain Data Platform</h3>
+                    <p class="client-name">Starlinks | KSA & GCC</p>
+                    <p>End-to-end data platform integrating Oracle, Locus, Mintsoft, Shipy. Delivered 6 data products solving billing, inventory, and operational challenges.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">MS Fabric</span>
+                        <span class="tech-tag">Power BI</span>
+                        <span class="tech-tag">Oracle</span>
+                        <span class="tech-tag">Azure</span>
+                    </div>
+                    <div class="impact">85% faster billing | 30% inventory reduction</div>
+                    <a href="projects/starlinks.html" class="view-details">View Case Study</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- All Projects -->
+    <section class="container" style="background: #F8F9FA; padding: 4rem 2rem;">
+        <div class="section-header">
+            <h2>All Projects</h2>
+            <p>Filter by technology or industry</p>
+        </div>
+
+        <!-- Filter Bar -->
+        <div class="filter-bar">
+            <div style="margin-bottom: 1rem;">
+                <span class="filter-label">Technology:</span>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All Projects</button>
+                    <button class="filter-btn" data-filter="fabric">Microsoft Fabric</button>
+                    <button class="filter-btn" data-filter="azure">Azure</button>
+                    <button class="filter-btn" data-filter="aws">AWS</button>
+                    <button class="filter-btn" data-filter="snowflake">Snowflake</button>
+                    <button class="filter-btn" data-filter="powerbi">Power BI</button>
+                </div>
+            </div>
+            <div>
+                <span class="filter-label">Industry:</span>
+                <div class="filter-buttons">
+                    <button class="filter-btn" data-filter="logistics">Supply Chain & Logistics</button>
+                    <button class="filter-btn" data-filter="retail">Retail & eCommerce</button>
+                    <button class="filter-btn" data-filter="healthcare">Healthcare</button>
+                    <button class="filter-btn" data-filter="automotive">Automotive</button>
+                    <button class="filter-btn" data-filter="financial">Financial Services</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="projects-grid">
+            <!-- Replenium -->
+            <div class="project-card" data-filters="azure,powerbi,retail">
+                <div class="project-icon">RP</div>
+                <h3>Replenium</h3>
+                <p class="client-name">Auto-Replenishment Platform</p>
+                <p>Power BI analytics solution with Azure Data Factory, Data Lake, and multiple data source integration.</p>
+                <div class="tech-tags">
+                    <span class="tech-tag">Azure</span>
+                    <span class="tech-tag">Power BI</span>
+                    <span class="tech-tag">Data Lake</span>
+                </div>
+                <a href="projects/replenium.html" class="view-details">View Project</a>
+            </div>
+
+            <!-- Meta DWH -->
+            <div class="project-card" data-filters="azure,powerbi">
+                <div class="project-icon">MT</div>
+                <h3>Meta - Data Warehouse</h3>
+                <p class="client-name">Enterprise Data Platform</p>
+                <p>Redesigned DWH architecture, reduced pipeline execution from 2 hours to 20 minutes. 85% performance improvement.</p>
+                <div class="tech-tags">
+                    <span class="tech-tag">Azure</span>
+                    <span class="tech-tag">ADF</span>
+                    <span class="tech-tag">SQL</span>
+                </div>
+                <a href="projects/meta.html" class="view-details">View Project</a>
+            </div>
+
+            <!-- HBR Consulting -->
+            <div class="project-card" data-filters="powerbi,azure">
+                <div class="project-icon">HBR</div>
+                <h3>HBR Consulting</h3>
+                <p class="client-name">Law Firm BI Solution</p>
+                <p>Migrated complete QlikView application to Power BI with advanced transformations and DAX calculations.</p>
+                <div class="tech-tags">
+                    <span class="tech-tag">Power BI</span>
+                    <span class="tech-tag">QlikView</span>
+                    <span class="tech-tag">DAX</span>
+                </div>
+                <a href="projects/hbr-consulting.html" class="view-details">View Project</a>
+            </div>
+
+            <!-- Fasset -->
+            <div class="project-card" data-filters="aws,powerbi,financial">
+                <div class="project-icon">FS</div>
+                <h3>Fasset</h3>
+                <p class="client-name">Blockchain Real Estate Platform</p>
+                <p>Data infrastructure for blockchain-powered real estate investment platform using AWS Cloud and Python.</p>
+                <div class="tech-tags">
+                    <span class="tech-tag">AWS</span>
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Power BI</span>
+                </div>
+                <a href="projects/fasset.html" class="view-details">View Project</a>
+            </div>
+
+            <!-- PayActiv -->
+            <div class="project-card" data-filters="snowflake,aws">
+                <div class="project-icon">PA</div>
+                <h3>PayActiv</h3>
+                <p class="client-name">Financial Services</p>
+                <p>Data warehouse implementation in Snowflake with AWS services, SSIS, and advanced analytics.</p>
+                <div class="tech-tags">
+                    <span class="tech-tag">Snowflake</span>
+                    <span class="tech-tag">AWS</span>
+                    <span class="tech-tag">SSIS</span>
+                </div>
+                <a href="projects/payactiv.html" class="view-details">View Project</a>
+            </div>
+
+            <!-- Servaid Pharmacy -->
+            <div class="project-card" data-filters="powerbi,retail,healthcare">
+                <div class="project-icon">SV</div>
+                <h3>Servaid Pharmacy</h3>
+                <p class="client-name">Pharmaceutical eCommerce</p>
+                <p>Multi-department Power BI dashboards for Finance, Commercial, Planning, Sales, and Supply Chain analytics.</p>
+                <div class="tech-tags">
+                    <span class="tech-tag">Power BI</span>
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">SQL</span>
+                </div>
+                <a href="projects/servaid.html" class="view-details">View Project</a>
+            </div>
+
+            <!-- Toyota/Lexus Crosstabs -->
+            <div class="project-card" data-filters="azure,automotive">
+                <div class="project-icon">TY</div>
+                <h3>Toyota/Lexus Europe & Canada</h3>
+                <p class="client-name">Automotive OEM</p>
+                <p>Crosstabs module for 27 countries providing runtime report generation with multilingual support.</p>
+                <div class="tech-tags">
+                    <span class="tech-tag">Azure DWH</span>
+                    <span class="tech-tag">SSAS</span>
+                    <span class="tech-tag">Power BI</span>
+                </div>
+                <a href="projects/toyota.html" class="view-details">View Project</a>
+            </div>
+
+            <!-- Hyundai Canada -->
+            <div class="project-card" data-filters="azure,automotive,powerbi">
+                <div class="project-icon">HY</div>
+                <h3>Hyundai Canada</h3>
+                <p class="client-name">Action Planner Solution</p>
+                <p>Sales analytics action planner identifying weak areas and enabling data-driven sales improvements.</p>
+                <div class="tech-tags">
+                    <span class="tech-tag">Azure</span>
+                    <span class="tech-tag">ADF</span>
+                    <span class="tech-tag">Power BI</span>
+                </div>
+                <a href="projects/hyundai.html" class="view-details">View Project</a>
+            </div>
+
+            <!-- NRPA -->
+            <div class="project-card" data-filters="azure,powerbi">
+                <div class="project-icon">NR</div>
+                <h3>NRPA</h3>
+                <p class="client-name">National Recreation & Park Association</p>
+                <p>Power BI dashboards with Azure SQL, data warehouse schema, and Power Automate integration.</p>
+                <div class="tech-tags">
+                    <span class="tech-tag">Azure SQL</span>
+                    <span class="tech-tag">Power BI</span>
+                    <span class="tech-tag">Power Automate</span>
+                </div>
+                <a href="projects/nrpa.html" class="view-details">View Project</a>
+            </div>
+
+            <!-- EPM Partners -->
+            <div class="project-card" data-filters="powerbi,azure">
+                <div class="project-icon">EP</div>
+                <h3>EPM Partners</h3>
+                <p class="client-name">PMO Consulting - Australia</p>
+                <p>Power Apps and Power BI solutions for corporate and government PMOs with multi-source integration.</p>
+                <div class="tech-tags">
+                    <span class="tech-tag">Power BI</span>
+                    <span class="tech-tag">Power Apps</span>
+                    <span class="tech-tag">Dynamics</span>
+                </div>
+                <a href="projects/epm-partners.html" class="view-details">View Project</a>
+            </div>
+
+            <!-- Meridian Canada -->
+            <div class="project-card" data-filters="powerbi,retail">
+                <div class="project-icon">MC</div>
+                <h3>Meridian Canada</h3>
+                <p class="client-name">Uniform Manufacturing</p>
+                <p>SAP B1 integration with Power BI for supply chain, financial modeling, and operations analytics.</p>
+                <div class="tech-tags">
+                    <span class="tech-tag">SAP B1</span>
+                    <span class="tech-tag">Power BI</span>
+                    <span class="tech-tag">SQL</span>
+                </div>
+                <a href="projects/meridian.html" class="view-details">View Project</a>
+            </div>
+
+            <!-- Shopper Value -->
+            <div class="project-card" data-filters="powerbi,retail">
+                <div class="project-icon">SH</div>
+                <h3>Shopper Value</h3>
+                <p class="client-name">Retail Analytics</p>
+                <p>Retail KPI analytics tracking Traffic, Basket Size, Revenue, and staff effectiveness for retail chains.</p>
+                <div class="tech-tags">
+                    <span class="tech-tag">Power BI</span>
+                    <span class="tech-tag">SQL</span>
+                    <span class="tech-tag">Excel</span>
+                </div>
+                <a href="projects/shopper-value.html" class="view-details">View Project</a>
+            </div>
+
+            <!-- CareMonX NHS -->
+            <div class="project-card" data-filters="healthcare">
+                <div class="project-icon">CM</div>
+                <h3>CareMonX ePCR - NHS</h3>
+                <p class="client-name">UK National Health Service</p>
+                <p>Complete BI solution for ambulance-based electronic patient care records with multi-language support.</p>
+                <div class="tech-tags">
+                    <span class="tech-tag">SQL Server</span>
+                    <span class="tech-tag">SSAS</span>
+                    <span class="tech-tag">SSIS</span>
+                </div>
+                <a href="projects/caremonx.html" class="view-details">View Project</a>
+            </div>
+
+            <!-- TCP Inventory -->
+            <div class="project-card" data-filters="azure,healthcare">
+                <div class="project-icon">TCP</div>
+                <h3>TCP Homecare</h3>
+                <p class="client-name">Healthcare Service Provider</p>
+                <p>Inventory management solution with Service Broker technology for real-time data synchronization.</p>
+                <div class="tech-tags">
+                    <span class="tech-tag">Azure</span>
+                    <span class="tech-tag">SQL Server</span>
+                    <span class="tech-tag">Power BI</span>
+                </div>
+                <a href="projects/tcp.html" class="view-details">View Project</a>
+            </div>
+
+            <!-- Payment Broker -->
+            <div class="project-card" data-filters="financial">
+                <div class="project-icon">PB</div>
+                <h3>Payment Broker Application</h3>
+                <p class="client-name">Middle East Financial Company</p>
+                <p>Database architecture processing $16M monthly settlements with data migration and MongoDB integration.</p>
+                <div class="tech-tags">
+                    <span class="tech-tag">SQL Server</span>
+                    <span class="tech-tag">MongoDB</span>
+                    <span class="tech-tag">T-SQL</span>
+                </div>
+                <a href="projects/payment-broker.html" class="view-details">View Project</a>
+            </div>
+
+            <!-- Azure Synapse ETL -->
+            <div class="project-card" data-filters="azure">
+                <div class="project-icon">SY</div>
+                <h3>Azure Synapse - Financial</h3>
+                <p class="client-name">US Financial Company</p>
+                <p>Consolidated reporting database using SQL Dedicated Pool with multi-source integration and CI/CD.</p>
+                <div class="tech-tags">
+                    <span class="tech-tag">Azure Synapse</span>
+                    <span class="tech-tag">ADF</span>
+                    <span class="tech-tag">SQL Pool</span>
+                </div>
+                <a href="projects/azure-synapse.html" class="view-details">View Project</a>
+            </div>
+
+            <!-- AWS Glue -->
+            <div class="project-card" data-filters="aws">
+                <div class="project-icon">AWS</div>
+                <h3>AWS DataLake - S3 & Glue</h3>
+                <p class="client-name">Enterprise ETL Solution</p>
+                <p>Complete AWS solution with Glue, S3 DataLake, and Athena for ad-hoc querying capabilities.</p>
+                <div class="tech-tags">
+                    <span class="tech-tag">AWS Glue</span>
+                    <span class="tech-tag">S3</span>
+                    <span class="tech-tag">Athena</span>
+                </div>
+                <a href="projects/aws-glue.html" class="view-details">View Project</a>
+            </div>
+
+            <!-- Agha Khan -->
+            <div class="project-card" data-filters="powerbi">
+                <div class="project-icon">AK</div>
+                <h3>Agha Khan Development Network</h3>
+                <p class="client-name">Non-Profit Organization</p>
+                <p>ETL pipeline with Talend and Vertica database for data analysis and Power BI visualizations.</p>
+                <div class="tech-tags">
+                    <span class="tech-tag">Talend</span>
+                    <span class="tech-tag">Vertica</span>
+                    <span class="tech-tag">Power BI</span>
+                </div>
+                <a href="projects/agha-khan.html" class="view-details">View Project</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Muhammad Nazim. All rights reserved.</p>
+        <p>Data & Analytics / Governance Architect</p>
+    </footer>
+
+    <script src="assets/js/filter.js"></script>
+</body>
+</html>
