@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starlinks - Supply Chain Data Platform | Muhammad Nazim</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Muhammad Nazim</div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Projects</a></li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container project-detail">
+        <a href="../index.html" class="back-link">Back to Projects</a>
+        
+        <div class="project-header">
+            <h1>End-to-End Supply Chain Data Platform</h1>
+            <div class="project-meta">
+                <span><strong>Client:</strong> Starlinks Supply Chain Solutions (KSA & GCC)</span>
+                <span><strong>Role:</strong> Lead Data Architect</span>
+                <span><strong>Delivery:</strong> 6 months</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Overview</h2>
+            <p>Starlinks is a leading supply chain solutions provider delivering high-quality end-to-end logistics management across Saudi Arabia and the GCC region. Built a comprehensive Microsoft Fabric data platform integrating Oracle ERP, Locus, Mintsoft, and Shipy to deliver six core data products addressing critical business challenges across billing, inventory, and operations.</p>
+        </div>
+
+        <div class="section">
+            <h2>Business Challenge</h2>
+            <p>Starlinks operates across multiple business models (B2B, B2C, 3PL, 4PL) with specialized services including eCommerce fulfillment, automotive logistics, cold-chain management, and SFDA-certified warehousing. Critical challenges included:</p>
+            <ul>
+                <li>Fragmented data across Oracle, Locus (3PL last-mile), Mintsoft (eCommerce WMS), and Shipy (eCommerce delivery)</li>
+                <li>Manual billing reconciliation causing revenue leakage</li>
+                <li>No real-time Stock on Hand (SOH) visibility across 15+ warehouses</li>
+                <li>Limited inbound management (IMD) tracking and supplier performance visibility</li>
+                <li>Disconnected last-mile delivery data between 3PL and eCommerce operations</li>
+                <li>Operational inefficiencies with no unified performance metrics</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Solution Architecture</h2>
+            
+            <h3>Medallion Architecture Implementation</h3>
+            
+            <h4>Bronze Layer (Fabric Lakehouse)</h4>
+            <ul>
+                <li>Real-time integration from Oracle ERP, Locus, Mintsoft, Shipy</li>
+                <li>Fabric Data Factory pipelines for automated extraction</li>
+                <li>Raw data preservation with complete audit trails</li>
+                <li>Historical data archival and compliance tracking</li>
+            </ul>
+
+            <h4>Silver Layer (Fabric Lakehouse)</h4>
+            <ul>
+                <li>Data quality validation and cleansing</li>
+                <li>Cross-system reconciliation and deduplication</li>
+                <li>Business rules application</li>
+                <li>Conformed dimensions: Customer, Product, Location, Time</li>
+                <li>Slowly Changing Dimensions (SCD Type 2) for historical tracking</li>
+            </ul>
+
+            <h4>Gold Layer (Fabric Data Warehouse)</h4>
+            <ul>
+                <li>Business-ready data models optimized for analytics</li>
+                <li>Pre-calculated KPIs and metrics</li>
+                <li>Role-based security views</li>
+                <li>Six core data products serving multiple business domains</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Data Products Delivered</h2>
+            
+            <h3>1. Billing Visibility Data Product</h3>
+            <ul>
+                <li>Revenue tracking by customer, service line, and region</li>
+                <li>Automated billing reconciliation across all systems</li>
+                <li>Invoice accuracy monitoring and exception handling</li>
+                <li>Revenue leakage detection and prevention</li>
+            </ul>
+            <p><strong>Impact:</strong> 85% reduction in billing reconciliation time, eliminated manual processes</p>
+
+            <h3>2. Stock & Inventory (SOH) Data Product</h3>
+            <ul>
+                <li>Real-time stock on hand across all warehouse locations</li>
+                <li>Inventory aging analysis and valuation</li>
+                <li>Stock movement tracking and transfer monitoring</li>
+                <li>Reorder point alerts and safety stock management</li>
+            </ul>
+            <p><strong>Impact:</strong> 30% reduction in excess inventory, eliminated stockouts through proactive monitoring</p>
+
+            <h3>3. Inbound Management (IMD) Data Product</h3>
+            <ul>
+                <li>Inbound shipment tracking from origin to warehouse</li>
+                <li>Receiving operations efficiency monitoring</li>
+                <li>Supplier on-time delivery performance metrics</li>
+                <li>Putaway operations tracking and optimization</li>
+            </ul>
+            <p><strong>Impact:</strong> 60% improvement in receiving efficiency, faster putaway operations</p>
+
+            <h3>4. Last Mile Delivery (LM) Data Product</h3>
+            <ul>
+                <li>Unified view of 3PL (Locus) and eCommerce (Shipy) deliveries</li>
+                <li>Real-time delivery status and location tracking</li>
+                <li>Driver performance and route optimization analytics</li>
+                <li>Delivery exception management and resolution</li>
+            </ul>
+            <p><strong>Impact:</strong> 25% improvement in on-time delivery, 40% reduction in delivery exceptions</p>
+
+            <h3>5. Outbound Shipment Data Product</h3>
+            <ul>
+                <li>Order fulfillment tracking from pick to dispatch</li>
+                <li>Picking and packing efficiency metrics</li>
+                <li>Dispatch performance and on-time shipment rates</li>
+                <li>Customer order visibility and tracking</li>
+            </ul>
+            <p><strong>Impact:</strong> 50% faster shipment processing, 99.5% order accuracy</p>
+
+            <h3>6. Operational Efficiency Data Product</h3>
+            <ul>
+                <li>Warehouse productivity and labor utilization</li>
+                <li>Equipment efficiency and maintenance tracking</li>
+                <li>Process cycle time analysis</li>
+                <li>Cross-dock performance optimization</li>
+            </ul>
+            <p><strong>Impact:</strong> 20% operational cost reduction through data-driven optimization</p>
+        </div>
+
+        <div class="section">
+            <h2>Technologies</h2>
+            <div class="tech-tags" style="margin-top: 1rem;">
+                <span class="tech-tag">Microsoft Fabric</span>
+                <span class="tech-tag">Fabric Lakehouse</span>
+                <span class="tech-tag">Fabric Data Warehouse</span>
+                <span class="tech-tag">Fabric Data Factory</span>
+                <span class="tech-tag">Fabric Notebooks</span>
+                <span class="tech-tag">OneLake</span>
+                <span class="tech-tag">Oracle ERP</span>
+                <span class="tech-tag">Locus TMS</span>
+                <span class="tech-tag">Mintsoft WMS</span>
+                <span class="tech-tag">Shipy</span>
+                <span class="tech-tag">Power BI</span>
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Spark</span>
+                <span class="tech-tag">Azure DevOps</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Key Achievements</h2>
+            <div class="outcomes-grid">
+                <div class="outcome-card">
+                    <span class="outcome-value">85%</span>
+                    <span class="outcome-label">Faster billing reconciliation</span>
+                </div>
+                <div class="outcome-card">
+                    <span class="outcome-value">30%</span>
+                    <span class="outcome-label">Inventory reduction</span>
+                </div>
+                <div class="outcome-card">
+                    <span class="outcome-value">60%</span>
+                    <span class="outcome-label">Better inbound efficiency</span>
+                </div>
+                <div class="outcome-card">
+                    <span class="outcome-value">25%</span>
+                    <span class="outcome-label">On-time delivery improvement</span>
+                </div>
+                <div class="outcome-card">
+                    <span class="outcome-value">50%</span>
+                    <span class="outcome-label">Faster shipment processing</span>
+                </div>
+                <div class="outcome-card">
+                    <span class="outcome-value">20%</span>
+                    <span class="outcome-label">Operational cost reduction</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Strategic Business Impact</h2>
+            
+            <h3>Single Source of Truth</h3>
+            <ul>
+                <li>Unified data platform across Oracle, Locus, Mintsoft, Shipy</li>
+                <li>Eliminated conflicting reports and data silos</li>
+                <li>Consistent KPIs across entire organization</li>
+            </ul>
+
+            <h3>Enhanced Customer Experience</h3>
+            <ul>
+                <li>Real-time shipment tracking visibility for customers</li>
+                <li>Proactive delivery exception notifications</li>
+                <li>Improved order accuracy and on-time delivery</li>
+            </ul>
+
+            <h3>Revenue Growth Enablement</h3>
+            <ul>
+                <li>Billing accuracy improved customer trust and retention</li>
+                <li>Operational efficiency enabled capacity expansion without proportional cost increase</li>
+                <li>Data insights identified new revenue opportunities in underserved markets</li>
+            </ul>
+
+            <h3>Compliance & Governance</h3>
+            <ul>
+                <li>SFDA and ISO audit trail capabilities</li>
+                <li>Automated compliance reporting for regulatory requirements</li>
+                <li>Secure multi-tenant data architecture with role-based access</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Project Scale</h2>
+            <ul>
+                <li><strong>Data Volume:</strong> Processing 200+ GB daily across all sources</li>
+                <li><strong>Users:</strong> 500+ users across Saudi Arabia and GCC region</li>
+                <li><strong>Warehouses:</strong> 15+ facilities integrated into platform</li>
+                <li><strong>Daily Transactions:</strong> 50,000+ shipments tracked</li>
+                <li><strong>Deliverables:</strong> 75+ Power BI dashboards and reports</li>
+                <li><strong>Data Products:</strong> 6 core business-focused products</li>
+                <li><strong>Systems Integrated:</strong> 4 major platforms (Oracle, Locus, Mintsoft, Shipy)</li>
+                <li><strong>Delivery Timeline:</strong> 6 months from inception to production</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Muhammad Nazim. All rights reserved.</p>
+    </footer>
+</body>
+</html>

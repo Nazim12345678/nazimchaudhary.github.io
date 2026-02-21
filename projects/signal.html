@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signal - Enterprise Data Product Platform | Muhammad Nazim</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Muhammad Nazim</div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Projects</a></li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container project-detail">
+        <a href="../index.html" class="back-link">Back to Projects</a>
+        
+        <div class="project-header">
+            <h1>Enterprise Data Product Platform</h1>
+            <div class="project-meta">
+                <span><strong>Client:</strong> TeamSignal (Security Services)</span>
+                <span><strong>Role:</strong> Lead Data Architect</span>
+                <span><strong>Timeline:</strong> 2020 - Present</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Overview</h2>
+            <p>TeamSignal is a leading security services provider delivering comprehensive solutions across multiple sectors. Built an enterprise-scale data product platform (SOAP) delivering 12 KPIs across four business domains with role-based analytics serving executives, directors, sales teams, and field officers.</p>
+            <p>The project evolved through two major phases: initial implementation with Azure Data Factory and Databricks (2020), followed by a complete migration to Microsoft Fabric (2024) to leverage modern data platform capabilities.</p>
+        </div>
+
+        <div class="section">
+            <h2>Business Challenge</h2>
+            <p>TeamSignal operated with fragmented data across multiple systems, preventing unified business intelligence and hindering strategic decision-making. Key challenges included:</p>
+            <ul>
+                <li>No standardized KPI framework across business units</li>
+                <li>Manual reporting processes consuming significant resources</li>
+                <li>Lack of role-based data access and visibility</li>
+                <li>Disconnected data sources preventing comprehensive analysis</li>
+                <li>Inability to track performance across Sales, Operations, Admin, and Customer Promise dimensions</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Solution Architecture</h2>
+            
+            <h3>Phase 1: Azure Data Factory & Databricks (2020-2023)</h3>
+            <p>Implemented medallion architecture (Bronze → Silver → Gold) with the following components:</p>
+            <ul>
+                <li><strong>Data Sources:</strong> Sage Intacct, EDO systems, HR platforms (PayCor, ADP), BET, and legacy systems</li>
+                <li><strong>Ingestion:</strong> Azure Blob Storage landing zone with Azure Data Factory pipelines</li>
+                <li><strong>Bronze Layer:</strong> Raw data ingestion with Fabric Lakehouse, distributed copy from various sources</li>
+                <li><strong>Silver Layer:</strong> Data transformation using Databricks, quality checks, deduplication, and standardization</li>
+                <li><strong>Gold Layer:</strong> Business-ready data warehouse with curated metrics and KPIs</li>
+                <li><strong>Analytics:</strong> Power BI dashboards with role-based access control</li>
+            </ul>
+
+            <h3>Phase 2: Microsoft Fabric Migration (2024)</h3>
+            <p>Migrated entire platform to Microsoft Fabric ecosystem for enhanced performance and unified data experience:</p>
+            <ul>
+                <li><strong>Fabric Event Streams:</strong> Real-time data ingestion capabilities</li>
+                <li><strong>Fabric Lakehouse:</strong> Unified Bronze and Silver layers with OneLake integration</li>
+                <li><strong>Fabric Data Warehouse:</strong> Gold layer with optimized query performance</li>
+                <li><strong>Fabric Notebooks:</strong> Python/Spark transformations replacing Databricks</li>
+                <li><strong>Fabric Pipelines:</strong> Enhanced orchestration with better monitoring</li>
+                <li><strong>DevOps Integration:</strong> Two-environment CI/CD strategy (Development → Production)</li>
+            </ul>
+        </div>
+
+        <div class="architecture-diagram">
+            <img src="../assets/images/signal-architecture.png" alt="Signal Data Architecture" onerror="this.style.display='none'">
+            <p style="color: #5D6D7E; margin-top: 1rem;"><em>Medallion Architecture: Bronze (Raw) → Silver (Refined) → Gold (Curated)</em></p>
+        </div>
+
+        <div class="section">
+            <h2>SOAP Data Product Framework</h2>
+            <p>Developed comprehensive data product delivering 12 KPIs across four business sections:</p>
+            
+            <h3>Sales Section</h3>
+            <ul>
+                <li><strong>Net Revenue Growth:</strong> Year-over-year revenue increase tracking</li>
+                <li><strong>Market Share:</strong> Competitive positioning analysis</li>
+                <li><strong>Same Customer Sales:</strong> Customer retention revenue metrics</li>
+            </ul>
+
+            <h3>Administration Section</h3>
+            <ul>
+                <li><strong>Gross Profit:</strong> Profitability metrics by service line</li>
+                <li><strong>Days Sales Outstanding (DSO):</strong> Cash flow and collection efficiency</li>
+                <li><strong>Accounts Receivable Over 90:</strong> Aging analysis and risk management</li>
+            </ul>
+
+            <h3>Operations Section</h3>
+            <ul>
+                <li><strong>Dedicated Shift:</strong> Resource allocation and utilization</li>
+                <li><strong>Completion Patrol:</strong> Service delivery performance</li>
+                <li><strong>Completion Labor Efficiency:</strong> Productivity optimization</li>
+            </ul>
+
+            <h3>Promise Section</h3>
+            <ul>
+                <li><strong>Customer Retention:</strong> Client loyalty and satisfaction tracking</li>
+                <li><strong>OBX (Officer Engagement):</strong> Field officer performance and engagement</li>
+                <li><strong>AFFIRM (CBX):</strong> Customer-facing metrics and quality indicators</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Role-Based Access Control</h2>
+            <p>Implemented comprehensive security model with tailored views for different organizational roles:</p>
+            <ul>
+                <li><strong>Home Office:</strong> Full enterprise visibility across all metrics and dimensions</li>
+                <li><strong>Owner:</strong> Strategic KPIs with executive-level aggregations</li>
+                <li><strong>Director:</strong> Department-level metrics with drill-down capabilities</li>
+                <li><strong>Sales Executive:</strong> Sales performance, pipeline, and customer metrics</li>
+                <li><strong>Officer:</strong> Individual performance metrics and operational data</li>
+            </ul>
+            <p>All reports embedded directly into TeamSignal's website with seamless single sign-on integration.</p>
+        </div>
+
+        <div class="section">
+            <h2>Technologies</h2>
+            <div class="tech-tags" style="margin-top: 1rem;">
+                <span class="tech-tag">Microsoft Fabric</span>
+                <span class="tech-tag">Azure Data Factory</span>
+                <span class="tech-tag">Azure Databricks</span>
+                <span class="tech-tag">Azure Blob Storage</span>
+                <span class="tech-tag">Fabric Lakehouse</span>
+                <span class="tech-tag">Fabric Data Warehouse</span>
+                <span class="tech-tag">Fabric Event Streams</span>
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Spark</span>
+                <span class="tech-tag">Power BI</span>
+                <span class="tech-tag">SQL</span>
+                <span class="tech-tag">Azure DevOps</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Key Achievements</h2>
+            <div class="outcomes-grid">
+                <div class="outcome-card">
+                    <span class="outcome-value">12</span>
+                    <span class="outcome-label">Business KPIs across 4 domains</span>
+                </div>
+                <div class="outcome-card">
+                    <span class="outcome-value">5</span>
+                    <span class="outcome-label">User role levels with tailored access</span>
+                </div>
+                <div class="outcome-card">
+                    <span class="outcome-value">100%</span>
+                    <span class="outcome-label">Automated reporting processes</span>
+                </div>
+                <div class="outcome-card">
+                    <span class="outcome-value">Real-time</span>
+                    <span class="outcome-label">Data refresh with Fabric Event Streams</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Business Impact</h2>
+            <ul>
+                <li>Eliminated manual reporting processes, freeing executives for strategic work</li>
+                <li>Enabled data-driven decision making across all organizational levels</li>
+                <li>Improved visibility into customer retention and service quality metrics</li>
+                <li>Enhanced operational efficiency through real-time performance monitoring</li>
+                <li>Provided competitive intelligence through market share tracking</li>
+                <li>Strengthened financial management with DSO and AR aging visibility</li>
+                <li>Created single source of truth for all business metrics</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Migration to Microsoft Fabric</h2>
+            <p>The 2024 migration to Microsoft Fabric delivered significant platform improvements:</p>
+            <ul>
+                <li><strong>Performance:</strong> Faster query execution with Fabric Data Warehouse optimization</li>
+                <li><strong>Integration:</strong> Unified experience with OneLake eliminating data movement</li>
+                <li><strong>Cost Optimization:</strong> Consolidated compute resources and simplified architecture</li>
+                <li><strong>Real-time Capabilities:</strong> Event Streams enabling streaming analytics</li>
+                <li><strong>DevOps Maturity:</strong> Enhanced CI/CD with two-environment deployment strategy</li>
+                <li><strong>Governance:</strong> Improved data lineage and quality monitoring</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Muhammad Nazim. All rights reserved.</p>
+    </footer>
+</body>
+</html>

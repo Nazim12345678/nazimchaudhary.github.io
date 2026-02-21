@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coca-Cola - Real-Time IoT Data Platform | Muhammad Nazim</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Muhammad Nazim</div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Projects</a></li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container project-detail">
+        <a href="../index.html" class="back-link">Back to Projects</a>
+        
+        <div class="project-header">
+            <h1>Global Dispenser IoT Analytics Platform</h1>
+            <div class="project-meta">
+                <span><strong>Client:</strong> The Coca-Cola Company (Global)</span>
+                <span><strong>Partner:</strong> Thought Logic</span>
+                <span><strong>Role:</strong> Data Architect & Lead Implementation</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Overview</h2>
+            <p>Implemented a real-time IoT data processing platform for Coca-Cola's Freestyle dispenser network using Microsoft Fabric Eventhouse (KQL Database). The solution processes telemetry data from 55,000+ dispensers globally, handling 5.28 million files daily with sub-second query performance.</p>
+        </div>
+
+        <div class="section">
+            <h2>Business Challenge</h2>
+            <p>Coca-Cola's global Freestyle dispenser network generates massive volumes of operational data requiring both real-time monitoring and historical analysis:</p>
+            <ul>
+                <li>220,000 files per hour (5.28M files daily) from 55,000 dispensers</li>
+                <li>165 GB compressed daily data (~660 GB uncompressed)</li>
+                <li>Need for real-time operational dashboards and historical trend analysis</li>
+                <li>Multiple consumer teams requiring different data access patterns</li>
+                <li>Compliance requirements for 2-year data retention</li>
+                <li>Cost optimization through intelligent data tier routing</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Solution Architecture</h2>
+            
+            <h3>Data Ingestion</h3>
+            <p>Dual-path ingestion strategy supporting both streaming and batch processing:</p>
+            <ul>
+                <li><strong>Streaming Path:</strong> Fabric Event Streams for real-time telemetry ingestion</li>
+                <li><strong>Batch Path:</strong> Azure Blob Storage landing zone with automated file triggers</li>
+                <li><strong>Orchestration:</strong> Fabric Pipeline Auto Execution with Reflex triggers</li>
+            </ul>
+
+            <h3>Medallion Architecture in Eventhouse</h3>
+            
+            <h4>Bronze Kusto DB (Raw Layer)</h4>
+            <ul>
+                <li>Raw table ingestion from gzip files (DeviceStyle OS, UI, Java Logs)</li>
+                <li>Update Policy for streaming data capture</li>
+                <li>Transformation Function for initial parsing and validation</li>
+                <li>Complete audit trail and lineage tracking</li>
+            </ul>
+
+            <h4>Silver Kusto DB (Refined Layer)</h4>
+            <ul>
+                <li>Parse and validate log structures</li>
+                <li>Schema standardization across dispenser types</li>
+                <li>Deduplication and data quality checks</li>
+                <li>2-year rolling retention policy</li>
+                <li>Optimized for recent historical queries (hours to days)</li>
+            </ul>
+
+            <h4>Gold Kusto DB (Real-time Analytics)</h4>
+            <ul>
+                <li>Curated views for operational monitoring</li>
+                <li>Pre-aggregated metrics for dashboard performance</li>
+                <li>Business semantic layer with friendly naming</li>
+                <li>Agent-ready data structures for intelligent routing</li>
+                <li>Sub-second query response times</li>
+            </ul>
+
+            <h4>Gold DWH (Batch Analytics)</h4>
+            <ul>
+                <li>Fabric Data Warehouse for complex historical analysis</li>
+                <li>Daily batch loads from orchestration layer</li>
+                <li>Advanced aggregations and dimensional modeling</li>
+                <li>Long-term storage optimization with compression</li>
+                <li>Integration with Fabric OneLake for unified data access</li>
+            </ul>
+
+            <h3>Intelligent Query Routing</h3>
+            <p>Data Agent analyzes incoming queries and routes to optimal storage tier:</p>
+            <ul>
+                <li><strong>Real-time operations:</strong> Kusto Gold DB (operational dashboards, live monitoring)</li>
+                <li><strong>Recent historical:</strong> Kusto Silver DB (last few days analysis)</li>
+                <li><strong>Long-term analytics:</strong> Fabric DWH Gold (trend analysis, compliance reporting)</li>
+            </ul>
+        </div>
+
+        <div class="architecture-diagram">
+            <img src="../assets/images/coca-cola-architecture.png" alt="Coca-Cola Eventhouse Architecture" onerror="this.style.display='none'">
+            <p style="color: #5D6D7E; margin-top: 1rem;"><em>Hybrid Gold Layer: Kusto for Real-time + DWH for Batch Analytics</em></p>
+        </div>
+
+        <div class="section">
+            <h2>Technical Specifications</h2>
+            <ul>
+                <li><strong>Infrastructure:</strong> Fabric Capacity F128 SKU (F256 recommended for production)</li>
+                <li><strong>Processing:</strong> Incremental loads (daily new data only)</li>
+                <li><strong>Query Language:</strong> KQL (Kusto Query Language) for Eventhouse</li>
+                <li><strong>Data Retention:</strong> 2-year rolling window in Silver layer</li>
+                <li><strong>Performance Target:</strong> Sub-second query response for operational dashboards</li>
+                <li><strong>Availability:</strong> 99.9% uptime SLA for streaming pipeline</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Analytics & Serving</h2>
+            <ul>
+                <li><strong>SQL Endpoint:</strong> Direct Query access to Fabric Data Warehouse</li>
+                <li><strong>Data Agent:</strong> Intelligent routing layer for query optimization</li>
+                <li><strong>Power BI:</strong> Real-time dashboards with Direct Query and Import modes</li>
+                <li><strong>Consumer Teams:</strong>
+                    <ul style="margin-top: 0.5rem;">
+                        <li>GEP Team - Global equipment performance monitoring</li>
+                        <li>NAOU Team - North America operations tracking</li>
+                        <li>Analytics Team - Strategic insights and reporting</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Technologies</h2>
+            <div class="tech-tags" style="margin-top: 1rem;">
+                <span class="tech-tag">Microsoft Fabric Eventhouse</span>
+                <span class="tech-tag">KQL Database</span>
+                <span class="tech-tag">Fabric Event Streams</span>
+                <span class="tech-tag">Fabric Data Warehouse</span>
+                <span class="tech-tag">Fabric Data Factory</span>
+                <span class="tech-tag">Azure Blob Storage</span>
+                <span class="tech-tag">OneLake</span>
+                <span class="tech-tag">KQL (Kusto Query Language)</span>
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Power BI</span>
+                <span class="tech-tag">Azure Key Vault</span>
+                <span class="tech-tag">Azure DevOps</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Key Achievements</h2>
+            <div class="outcomes-grid">
+                <div class="outcome-card">
+                    <span class="outcome-value">5.28M</span>
+                    <span class="outcome-label">Files processed daily</span>
+                </div>
+                <div class="outcome-card">
+                    <span class="outcome-value">220K</span>
+                    <span class="outcome-label">Files per hour throughput</span>
+                </div>
+                <div class="outcome-card">
+                    <span class="outcome-value">&lt;1 sec</span>
+                    <span class="outcome-label">Query response time</span>
+                </div>
+                <div class="outcome-card">
+                    <span class="outcome-value">55K+</span>
+                    <span class="outcome-label">Global dispensers monitored</span>
+                </div>
+                <div class="outcome-card">
+                    <span class="outcome-value">99.9%</span>
+                    <span class="outcome-label">Pipeline uptime</span>
+                </div>
+                <div class="outcome-card">
+                    <span class="outcome-value">2 years</span>
+                    <span class="outcome-label">Data retention compliance</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Business Impact</h2>
+            <ul>
+                <li><strong>Operational Excellence:</strong> Real-time visibility into global dispenser network enabling proactive maintenance</li>
+                <li><strong>Cost Optimization:</strong> Intelligent query routing reduced storage and compute costs significantly</li>
+                <li><strong>Customer Experience:</strong> Faster issue detection and resolution improved end-user satisfaction</li>
+                <li><strong>Data-Driven Decisions:</strong> Strategic insights from historical trends informed dispenser placement and service optimization</li>
+                <li><strong>Compliance:</strong> Automated 2-year data retention met regulatory requirements</li>
+                <li><strong>Scalability:</strong> Architecture supports future expansion to additional dispensers and markets</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Technical Innovation</h2>
+            <ul>
+                <li>First large-scale implementation of Fabric Eventhouse for IoT at this scale</li>
+                <li>Novel hybrid Gold layer architecture optimizing for both real-time and batch use cases</li>
+                <li>Intelligent query routing system reducing costs while maintaining performance</li>
+                <li>Dual ingestion path supporting streaming and batch without data duplication</li>
+                <li>Scalable pattern demonstrating Fabric capabilities for global enterprise deployments</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Muhammad Nazim. All rights reserved.</p>
+    </footer>
+</body>
+</html>
